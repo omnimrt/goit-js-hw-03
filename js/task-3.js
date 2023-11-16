@@ -1,10 +1,15 @@
-function getElementWidth(content, padding, border) {
-  const contentFloated = Number.parseFloat(content);
-  const paddingFloated = Number.parseFloat(padding);
-  const borderFloated = Number.parseFloat(border);
-  return contentFloated + 2 * (paddingFloated + borderFloated);
+function filterArray(numbers, value) {
+  let arr = [];
+  for (number of numbers) {
+    if (number > value) {
+      arr.push(number);
+    }
+  }
+  return arr;
 }
 
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
